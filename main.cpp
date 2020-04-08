@@ -22,8 +22,8 @@ float sample_period = 0.0001; // period of sampling
 double data[10000] = {0}; // store input data
 
 int k = 0;
-int sample = 10000;
-float ADCdata[10000];
+int sample = 1024;
+float ADCdata[1024];
 
 
 int main()
@@ -110,16 +110,6 @@ int main()
 
             wait(0.1);
 
-        }
-
-        int m = 0;
-        float freq_cal = 2 * sample_period * freq;
-
-        for (m = 0; m < 10000; m++) {                    
-            float n = m*freq_cal;
-
-            Aout = 0.5 + 0.5 * sin(n*3.14159);
-            wait(sample_period);
         }
 
     }
